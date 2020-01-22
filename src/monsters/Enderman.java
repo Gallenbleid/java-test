@@ -8,6 +8,7 @@ package monsters;
 /**
  *
  * @author jimy
+ * 
  */
 public class Enderman extends Monster{
     public Enderman(){
