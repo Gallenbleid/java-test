@@ -32,6 +32,8 @@ public class JavaApplication1 {
         MonsterGenerator.printAllMonsters(monsterList);        
         monsterList.get(0).atack(monsterList.get(1));
         MonsterGenerator.printAllMonsters(monsterList);
+        Object annownObject=monsterList.get(1).getClass();
+        System.out.println(annownObject); //popracuj nad pobraniem rodzaju klasy do metod!!!!
     }    
     
 }

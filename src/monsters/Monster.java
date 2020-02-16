@@ -51,6 +51,16 @@ public class Monster {
         double cios = this.getPower()*victim.getShield();
         victim.setPD(getPD()-cios);
     }
+    public double parade(Monster atacker){
+       /** 
+        * Method that minimalises the power of other monster atak      
+        */
+        double powerOfAtack = atacker.getPower()*0.5;
+        return powerOfAtack;
+    }
+    public void fightOfTwo(){
+        
+    }
     public String toString(){
         return "Potwór - " + name;
     }
