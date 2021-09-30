@@ -12,19 +12,24 @@ public class Monster {
     protected double speed;
     protected double power;
     protected double shield;
+    protected int level;
     
     
     public Monster(){
+        this.level = 1;
         this.name = "Potwór" + id;
         this.pd = 100;
         this.speed = 30;
         this.power = 100;
-        this.shield = 0.1;        
+        this.shield = 0.1;
+        
+        
     }
     public Monster(int nr){
         this.name = "Monster " + nr;
     }
     public Monster(String sname){
+        this.level = 1;
         this.name = sname;
         this.pd = 100;
         this.speed = 30;
@@ -32,28 +37,17 @@ public class Monster {
         this.shield = 0.1;        
     }
     public void infoMonster(){
-        System.out.println("Monster "+getName()+" Życie = "+getPD());
+        System.out.println("Monster "+getName()+" Życie = "+getPD() + " Level= " + getLevel());
     }
     public void atack(Monster victim){        
         double cios = this.getPower()*victim.getShield();
+        //System.out.println("Atakujący : "+this.name + ", ofiara : " + victim.name);
         System.out.println("Zadano cios "+ cios + " PD.");
         victim.setPD(getPD()-cios);
-    }
-    public void atack(Skeleton victim){        
-        double cios = this.getPower()*victim.getShield();
-        victim.setPD(getPD()-cios);
-    }
-    public void atack(Zombie victim){        
-        double cios = this.getPower()*victim.getShield();
-        victim.setPD(getPD()-cios);
-    }
-    public void atack(Enderman victim){        
-        double cios = this.getPower()*victim.getShield();
-        victim.setPD(getPD()-cios);
-    }
+    }    
     public double parade(Monster atacker){
        /** 
-        * Method that minimalises the power of other monster atak      
+        * Method that minimalise the power of other monster atak      
         */
         double powerOfAtack = atacker.getPower()*0.5;
         return powerOfAtack;
@@ -62,7 +56,10 @@ public class Monster {
         
     }
     public String toString(){
-        return "Potwór - " + name;
+        return name;
+    }
+    public void badLook(){
+        
     }
     
 // ----------------------- getters - setters ---------------------- 
@@ -97,5 +94,11 @@ public class Monster {
     }
     public double getShield(){
         return shield;
+    }
+    public void setLevel(int actualLevel){
+        this.level = actualLevel;
+    }
+    public int getLevel(){
+        return level;
     }
 }

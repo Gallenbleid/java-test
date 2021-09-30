@@ -36,8 +36,7 @@ public class MonsterGenerator {
     
     public static void printAllMonsters(ArrayList<Monster> al){
         for (Monster m : al){
-            m.infoMonster();
-            //System.out.println(m);
+            m.infoMonster();            
         }
     }
 
